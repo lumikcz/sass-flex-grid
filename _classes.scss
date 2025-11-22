@@ -17,101 +17,102 @@
 }
 
 @mixin generate-classes($map, $separator, $name) {
-    .#{defaults.$sfg-prefix}row {
-		@include mixins.row-gutter(map.get($map, gutter));
+  .#{defaults.$sfg-prefix}row {
+    @include mixins.row-gutter(map.get($map, gutter));
 
-		&.no-gutter {
-			margin-right: 0;
-			margin-left: 0;
-		}
-	}
+    &.no-gutter {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
 
-    .#{defaults.$sfg-prefix}row-reverse#{$separator}#{$name} {
-		@include mixins.row-reverse();
-	}
+  .#{defaults.$sfg-prefix}row-reverse#{$separator}#{$name} {
+    @include mixins.row-reverse();
+  }
 
-	[class^='#{defaults.$sfg-prefix}col-'], [class*='#{defaults.$sfg-prefix}col-'] {
-		@include mixins.col-gutter(map.get($map, gutter));
+  [class^='#{defaults.$sfg-prefix}col-'],
+  [class*='#{defaults.$sfg-prefix}col-'] {
+    @include mixins.col-gutter(map.get($map, gutter));
 
-		.no-gutter & {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	}
+    .no-gutter & {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
 
-	.#{defaults.$sfg-prefix}col#{$separator}#{$name} {
-		flex-grow: 1;
-		flex-basis: 0;
-		max-width: 100%;
-		box-sizing: border-box;
-		box-flex: 0;
-	}
+  .#{defaults.$sfg-prefix}col#{$separator}#{$name} {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-flex: 0;
+  }
 
-    @for $i from 1 through map.get($map, columns) {
-      .#{defaults.$sfg-prefix}col-#{$i}#{$separator}#{$name} {
-		@include mixins.col(math.div($i, map.get($map, columns)), map.get($map, gutter));
-      }
-
-      .#{defaults.$sfg-prefix}col-offset-#{$i}#{$separator}#{$name} {
-		@include mixins.offset(math.div($i, map.get($map, columns)));
-      }
+  @for $i from 1 through map.get($map, columns) {
+    .#{defaults.$sfg-prefix}col-#{$i}#{$separator}#{$name} {
+      @include mixins.col(math.div($i, map.get($map, columns)), map.get($map, gutter));
     }
 
-    .#{defaults.$sfg-prefix}start#{$separator}#{$name} {
-		@include mixins.start();
+    .#{defaults.$sfg-prefix}col-offset-#{$i}#{$separator}#{$name} {
+      @include mixins.offset(math.div($i, map.get($map, columns)));
     }
+  }
 
-    .#{defaults.$sfg-prefix}center#{$separator}#{$name} {
-      @include mixins.center();
-    }
+  .#{defaults.$sfg-prefix}start#{$separator}#{$name} {
+    @include mixins.start();
+  }
 
-    .#{defaults.$sfg-prefix}end#{$separator}#{$name} {
-      @include mixins.end();
-    }
+  .#{defaults.$sfg-prefix}center#{$separator}#{$name} {
+    @include mixins.center();
+  }
 
-    .#{defaults.$sfg-prefix}top#{$separator}#{$name} {
-      @include mixins.top();
-    }
+  .#{defaults.$sfg-prefix}end#{$separator}#{$name} {
+    @include mixins.end();
+  }
 
-    .#{defaults.$sfg-prefix}middle#{$separator}#{$name} {
-      @include mixins.middle();
-    }
+  .#{defaults.$sfg-prefix}top#{$separator}#{$name} {
+    @include mixins.top();
+  }
 
-    .#{defaults.$sfg-prefix}bottom#{$separator}#{$name} {
-      @include mixins.bottom();
-    }
+  .#{defaults.$sfg-prefix}middle#{$separator}#{$name} {
+    @include mixins.middle();
+  }
 
-    .#{defaults.$sfg-prefix}around#{$separator}#{$name} {
-      @include mixins.around();
-    }
+  .#{defaults.$sfg-prefix}bottom#{$separator}#{$name} {
+    @include mixins.bottom();
+  }
 
-    .#{defaults.$sfg-prefix}between#{$separator}#{$name} {
-      @include mixins.between();
-    }
+  .#{defaults.$sfg-prefix}around#{$separator}#{$name} {
+    @include mixins.around();
+  }
 
-    .#{defaults.$sfg-prefix}first#{$separator}#{$name} {
-		@include mixins.first();
-    }
+  .#{defaults.$sfg-prefix}between#{$separator}#{$name} {
+    @include mixins.between();
+  }
 
-    .#{defaults.$sfg-prefix}last#{$separator}#{$name} {
-      @include mixins.last();
-    }
+  .#{defaults.$sfg-prefix}first#{$separator}#{$name} {
+    @include mixins.first();
+  }
 
-    .#{defaults.$sfg-prefix}hide#{$separator}#{$name} {
-      @include mixins.hide();
-    }
+  .#{defaults.$sfg-prefix}last#{$separator}#{$name} {
+    @include mixins.last();
+  }
 
-    .#{defaults.$sfg-prefix}show#{$separator}#{$name} {
-      @include mixins.show();
-    }
+  .#{defaults.$sfg-prefix}hide#{$separator}#{$name} {
+    @include mixins.hide();
+  }
 
-    .#{defaults.$sfg-prefix}show-inline#{$separator}#{$name} {
-      @include mixins.show-inline();
-    }
+  .#{defaults.$sfg-prefix}show#{$separator}#{$name} {
+    @include mixins.show();
+  }
 
-    .#{defaults.$sfg-prefix}show-flex#{$separator}#{$name} {
-      @include mixins.show-flex();
-    }
+  .#{defaults.$sfg-prefix}show-inline#{$separator}#{$name} {
+    @include mixins.show-inline();
+  }
+
+  .#{defaults.$sfg-prefix}show-flex#{$separator}#{$name} {
+    @include mixins.show-flex();
+  }
 }
 
 @each $label, $map in defaults.$sfg-breakpoints {
