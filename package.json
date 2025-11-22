@@ -1,6 +1,6 @@
 {
   "name": "sass-flex-grid",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Flexbox grid for sass (scss). Inspired by http://flexboxgrid.com/",
   "main": "index.js",
   "watch": {
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "concurrently": "7.0.0",
-    "live-server": "1.2.0",
+    "live-server": "^1.2.2",
     "npm-watch": "0.11.0",
     "sass": "^1.83.1"
   }

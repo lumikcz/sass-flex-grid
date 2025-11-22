@@ -81,6 +81,10 @@
   order: 1;
 }
 
+@mixin order($value: 1) {
+  order: $value;
+}
+
 @mixin hide {
 	display: none !important;
 }

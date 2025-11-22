@@ -56,6 +56,10 @@
     .#{defaults.$sfg-prefix}col-offset-#{$i}#{$separator}#{$name} {
       @include mixins.offset(math.div($i, map.get($map, columns)));
     }
+
+    .#{defaults.$sfg-prefix}col-order-#{$i}#{$separator}#{$name} {
+      @include mixins.order($i);
+    }
   }
 
   .#{defaults.$sfg-prefix}start#{$separator}#{$name} {
