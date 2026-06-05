@@ -48,6 +48,10 @@
     box-flex: 0;
   }
 
+  .#{defaults.$sfg-prefix}col-offset-0#{$separator}#{$name} {
+    margin-left: 0;
+  }
+
   @for $i from 1 through map.get($map, columns) {
     .#{defaults.$sfg-prefix}col-#{$i}#{$separator}#{$name} {
       @include mixins.col(math.div($i, map.get($map, columns)), map.get($map, gutter));
